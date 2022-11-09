@@ -1,0 +1,5 @@
+.tr1 {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
