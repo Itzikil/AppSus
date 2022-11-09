@@ -1,23 +1,19 @@
 import noteList from '../cmps/note-list.cmp.js'
+import addNote from '../cmps/add-note.cmp.js'
 import { noteService } from '../services/note.service.js'
 
 export default {
     template:`
-        <section>
+        <section class="note-app flex">
             <h1>Note</h1>
-            <div class="flex">
-                <input type="text" placeholder="Search" />
-                <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                <p><i class="fa fa-youtube-play" aria-hidden="true"></i></p>
-                <p><i class="fa fa-comment-o" aria-hidden="true"></i></p>
-                <p><i class="fa fa-list-ul" aria-hidden="true"></i></p>
-            </div>
+            <add-note @addNote="addNote"/>
             <note-list :notes="notes"/>
         </section>
     `,
     data(){
         return{
             notes: null,
+
         }
     },
     created(){
@@ -26,7 +22,14 @@ export default {
             this.notes = notes
         })
     },
+    methos:{
+        addNote(note){
+            console.log('hi');
+            this.notes.push(note)
+        }
+    },
     components:{
-        noteList
+        noteList,
+        addNote
     }
 }

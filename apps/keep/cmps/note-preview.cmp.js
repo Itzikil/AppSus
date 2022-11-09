@@ -7,14 +7,13 @@ export default {
     template:`
         <section>
             <h1>preview</h1>
-            <p>{{note.id}}</p>
-            <!-- <component 
-                :is="cmp.type"  
-                :info="cmp.info" 
-            </component> -->
-            <note-txt :note="note"/>
+            <p>{{note.type}}</p>
+            <component :is="note.type"
+                :note="note"  >
+            </component>
+            <!-- <note-txt :note="note"/>
             <note-img :note="note"/>
-            <note-todos :note="note"/>
+            <note-todos :note="note"/> -->
         </section>
         `,
         components:{

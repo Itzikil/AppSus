@@ -5,8 +5,8 @@ export default {
     template:`
         <section>
             <h1>list</h1>
-            <ul class="note-ul">
-                <li v-for="note in notes" class="note">
+            <ul class="note-ul flex clean-list pad">
+                <li v-for="note in notes" class="note pad radius">
                     <note-preview :note="note"/>
                 </li>
             </ul>
