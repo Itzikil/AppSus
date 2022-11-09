@@ -1,12 +1,6 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
-export const noteService = {
-    query,
-    get,
-    addNote,
-}
-
 const gNotes = [
     {
         id: "n101",
@@ -101,6 +95,14 @@ const gNotes = [
 ]
 
 const NOTE_KEY = 'Snotes'
+
+export const noteService = {
+    query,
+    get,
+    save,
+    remove,
+}
+
 _createNotes()
 
 function query() {
@@ -111,17 +113,23 @@ function get(noteId) {
     return storageService.get(NOTE_KEY, noteId)
 }
 
-function addNote(note){
-    console.log(note);
-    return storageService.post(NOTE_KEY ,note , false)
+function save(note){
+    if(note.id){   
+        return storageService.post(NOTE_KEY ,note , false)
+    }else{
+        return storageService.post(NOTE_KEY ,note , false)
+    }
+}
+
+function remove(noteId){
+    return storageService.remove(NOTE_KEY ,noteId)
 }
 
 function _createNotes() {
-    query().then(notes => {
+    var notes = utilService.load(NOTE_KEY)
         if (!notes || !notes.length) {
             notes = gNotes
-            storageService.save(NOTE_KEY, notes)
+            utilService.save(NOTE_KEY, notes)
         }
         return notes
-    })
 }

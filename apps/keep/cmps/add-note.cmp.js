@@ -5,11 +5,11 @@ export default {
         <section class="note-app flex">
             <form @submit.prevent="addNote" class="flex note-feature pad radius">
                 <input v-model="txt" type="text" placeholder="Whats on your mind" class="note-input"/>
-                <p><i class="fa fa-comment-o" aria-hidden="true"></i></p>
-                <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-                <p><i class="fa fa-youtube-play" aria-hidden="true"></i></p>
-                <p><i class="fa fa-list-ul" aria-hidden="true"></i></p>
-                <button>submit</button>
+                <i class="fa fa-comment-o" aria-hidden="true"></i>
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                <button class="trans">Add</button>
             </form>
         </section>
         `,
@@ -18,14 +18,17 @@ export default {
                 txt: 'whats on your mind',
             }
         },
+
         methods:{
             addNote(){
                 var note = {
                     info:{txt : this.txt},
                     type: "note-txt"
                 }
-                noteService.addNote(note)
-                    .then(() => this.$emit('addNote' ,note))
+                noteService.save(note)
+                    .then(note => {
+                        this.$emit('add', note)
+                    })
             }
         }
 }

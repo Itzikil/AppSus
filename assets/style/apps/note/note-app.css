@@ -10,20 +10,40 @@
     gap: 10px;
     border: 1px solid gray;
     width: fit-content;
-    align-items: flex-end;
+    align-items: center;
     align-self: center;
+    height: 50px;
+    box-shadow: 5px 5px 5px 5px rgb(207, 206, 206);
+    margin-bottom: 20px;
 }
 
 .note{
-    width: 200px;
+    position: relative;
+    min-width: 250px;
     height: fit-content;
     background-color: cornflowerblue;
+    margin-bottom: 20px;
+     break-inside: avoid-column;
 }
 
 .note-ul{
-    column-count: 5;
-    column-gap: 10px;
-    gap: 10px;
-    flex-wrap: wrap;
+    column-count: 4;
+    column-gap: 2%;
+    column-width: 30%;
+    /* flex-wrap: wrap; */
+}
+.trans{
+    background: transparent;
+    border: 0;
+}
+.remove-note{
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    right: 0;
+    top: 0;
 }
 
+.note-features > *{
+    margin: 0;
+}

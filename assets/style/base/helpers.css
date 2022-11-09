@@ -69,3 +69,9 @@
 .radius{
     border-radius: 10px;
 }
+
+.btn{
+    border-radius: 40px;
+    border: 1px solid gray;
+    padding: 10px;
+}

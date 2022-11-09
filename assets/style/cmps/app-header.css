@@ -2,7 +2,10 @@
   background-color: var(--clr5);
   color: var(--secondary-clr1);
   padding: 1em;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
+
 
 @media(max-width: 720px) {
   .app-header {
