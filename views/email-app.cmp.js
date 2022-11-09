@@ -5,15 +5,20 @@ import emailFilter from '../apps/mail/cmps/email-filter.cmp.js'
 
 export default {
     template: `
-       <section class="email-app">
-            <email-filter @filter="filter"/>
-            <email-list :emails="emailsToShow"/>
+        <section class="email-app flex flex-row">
+            <section class="email-nav">
+                <h1>email folder list</h1>
+            </section>
+            <section class="email-content">
+                <email-filter @filter="filter"/>
+                <email-list :emails="emailsToShow"/>
+            </section>
         </section>
     
     `,
     data() {
         return {
-            emails: null,
+            emails: [],
             selectedEmail: null,
             filterBy: null,
 
@@ -27,7 +32,7 @@ export default {
 
     },
     methods: {
-        filter(filterBy){
+        filter(filterBy) {
 
         }
 
@@ -40,7 +45,7 @@ export default {
     components: {
         emailList,
         emailFilter,
-        
+
 
     },
 
