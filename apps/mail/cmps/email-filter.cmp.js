@@ -1,5 +1,5 @@
 export default {
-    props: ["emails"],
+    // props: ["emails"],
     template: `
       <h1 @click="filter">email filter</h1>
       `,
