@@ -21,6 +21,10 @@ const routerOptions = {
 			path: '/note',
 			component: noteIndex,
 		},
+		{
+			path: '/about',
+			component: aboutPage,
+		},
 	],
 }
 
