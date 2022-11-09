@@ -1,0 +1,11 @@
+.note{
+    width: 200px;
+    height: fit-content;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+.note-ul{
+    padding: 10px;
+    column-count: 3;
+}
