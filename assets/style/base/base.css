@@ -31,6 +31,9 @@ a {
   font-family: 'Edu VIC WA NT Beginner', cursive;
 }
 
+li{
+  list-style: none;
+}
 
 
 /* Dont stretch my Media */
