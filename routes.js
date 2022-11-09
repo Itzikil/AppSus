@@ -1,6 +1,6 @@
 import homePage from './views/app-home.cmp.js'
 import aboutPage from './views/app-about.cmp.js'
-
+import mailIndex from './apps/mail/mail-index.cmp.js'
 const { createRouter, createWebHashHistory } = VueRouter
 
 const routerOptions = {
@@ -19,8 +19,8 @@ const routerOptions = {
 			component: aboutPage,
 		},
 		{
-			path: '/about',
-			component: aboutPage,
+			path: '/mail',
+			component: mailIndex,
 		},
 	],
 }
