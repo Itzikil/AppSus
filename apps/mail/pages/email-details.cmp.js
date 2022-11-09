@@ -6,9 +6,10 @@ export default {
         <h4>{{ email.from }}</h4>
         <h4>{{ email.sentAt }}</h4>
         <p>{{ email.body }}</p>
-    <router-link to="/email"><button>Back to list</button></router-link>
+        <router-link to="/email"><button>Back to list</button></router-link>
+    </section>
     `,
-    date(){
+    data(){
         return{
             email: null
         }
@@ -16,7 +17,7 @@ export default {
     },
     created(){
         const id = this.$route.params.id
-        emailService.get(id).then(email=> this.email=email)
+        emailService.get(id).then((email)=> (this.email=email))
     }
 
 

@@ -5,7 +5,7 @@ const EMAIL_KEY = 'mailDB'
 
 const gEmails = [
     {
-        id: 'e101',
+        id: utilService.makeId(),
         subject: ' Miss You!',
         body: 'Would love to catch up sometimes',
         isRead: false,
@@ -14,7 +14,7 @@ const gEmails = [
         to: 'user@appsus.com'
     },
     {
-        id: 'e102',
+        id: utilService.makeId(),
         subject: 'kobe kobe',
         body: 'Would love to hang up with you',
         isRead: true,
@@ -23,7 +23,7 @@ const gEmails = [
         to: 'baba@momo.com',
     },
     {
-        id: 'e103',
+        id: utilService.makeId(),
         subject: 'yossi tossi!',
         body: 'Never want to see you again!',
         isRead: false,
@@ -44,7 +44,6 @@ export const emailService = {
     save,
     get
 }
-_createEmails()
 function query() {
     return storageService.query(EMAIL_KEY)
 }
@@ -58,6 +57,7 @@ function save(email) {
 function get(emailId) {
     return storageService.get(EMAIL_KEY, emailId)
 }
+_createEmails()
 function _createEmails() {
     let emails = storageService.query(EMAIL_KEY)
     if (!emails || !emails.length) {

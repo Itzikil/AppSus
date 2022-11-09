@@ -2,7 +2,7 @@ import emailPreview from "./email-preview.cmp.js"
 export default {
     props: ['emails'],
     template: `
-    <tbody class=>
+    <tbody >
         <tr>
             <td>From</td>
             <td>Subject</td>
