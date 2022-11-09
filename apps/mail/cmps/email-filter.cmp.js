@@ -1,16 +1,18 @@
 export default {
-    template:`
-        <section class="mail-filter">
-            <input type="search" placeholder="Search mail">
-
-        </section>
-    `,
-    data(){
-        return{
-            txt:'',
-        }
+    props: ["emails"],
+    template: `
+      <h1 @click="filter">email filter</h1>
+      `,
+    data() {
+        return {
+            filterBy: {
+            },
+        };
     },
-    created(){},
-    methods: {},
+    methods: {
+        filter() {
+            this.$emit("filter", this.filterBy)
+        },
+    },
     computed: {},
 }
