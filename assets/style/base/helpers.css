@@ -24,6 +24,24 @@
     align-items: center;
 }
 
+.align-s-st {
+    align-self: flex-start;
+}
+
+.align-s-c {
+    align-self: center;
+}
+
+.align-s-end {
+    align-self: flex-end;
+}
+
+.grid {
+    display: grid;
+}
+
+
+
 /* text helpers */
 
 .colored-text {
@@ -61,16 +79,37 @@
 }
 
 /* another */
+.hidden {
+    display: none;
+}
 
-.pad{
+
+
+.p1 {
+    padding: 5px;
+}
+
+.p2 {
     padding: 10px;
 }
 
-.radius{
+.p3 {
+    padding: 15px;
+}
+
+.p4 {
+    padding: 20px;
+}
+
+.pad {
+    padding: 10px;
+}
+
+.radius {
     border-radius: 10px;
 }
 
-.btn{
+.btn {
     border-radius: 40px;
     border: 1px solid gray;
     padding: 10px;

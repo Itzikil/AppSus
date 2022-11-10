@@ -23,11 +23,11 @@ const routerOptions = {
 			component: noteApp,
 		},
 		{
-			path: '/email',
+			path: '/email/:status',
 			component: emailPage,
 		},
 		{
-			path: '/email/:id',
+			path: '/email/:status/:id',
 			component: emailDetails,
 		},
 	],

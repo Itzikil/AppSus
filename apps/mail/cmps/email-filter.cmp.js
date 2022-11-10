@@ -1,18 +1,22 @@
 export default {
-    // props: ["emails"],
     template: `
-      <h1 @click="filter">email filter</h1>
+      <!-- <section class="email-filter">
+            <input @input="$emit('filtered', filterBy)" type="search" v-modal="filterBy.txt" placeholder="Search">
+            <select v-model="filterBy.status" @change="$emit('filtered',filterBy)">
+                <option v-for="opt in options" :value="opt">{{ opt.replace(opt[0],opt[0].toUpperCase() )}}
+                </option>
+            </select>   
+        </section> -->
       `,
     data() {
         return {
-            filterBy: {
-            },
-        };
+            filterBy: { txt: '', status: 'all' },
+            options: ['all', 'read', 'unread', 'unstarred', 'starred'],
+
+        }
     },
     methods: {
-        filter() {
-            this.$emit("filter", this.filterBy)
-        },
+
     },
     computed: {},
 }

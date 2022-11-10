@@ -1,4 +1,9 @@
-.fa .fa-envelope-o{
-    width: 70px;
-    height: 70px;
+.email-app {
+  position: relative;
+  left: calc(20vw);
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 20vw);
+  align-items: center;
 }
+
