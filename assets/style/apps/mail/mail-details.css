@@ -1,0 +1,18 @@
+.email-content {
+    background-color: #eee;
+    display: flex;
+    flex: 1;
+}
+
+.email-content>p {
+    justify-content: center;
+    background-color: #fff;
+    flex: 1;
+    outline: solid 1rem #eee;
+}
+
+.email-details {
+    max-width: 50%;
+    height: 100%;
+    margin-top: 1rem;
+}

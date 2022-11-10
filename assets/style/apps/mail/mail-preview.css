@@ -16,8 +16,7 @@
 }
 
 .email-read {
-    background: #f2f5f5cc;
-    color: #202124;
+    background: #d4d8d8cc;
 }
 
 .details {
@@ -25,10 +24,12 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 .details>* {
     flex: 5;
+    /* color: black; */
 }
 
 .details> :first-child {
