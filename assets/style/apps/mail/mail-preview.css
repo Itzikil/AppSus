@@ -1,0 +1,36 @@
+.email-preview {
+    margin: 0 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.email-list>ul {
+    width: 100%;
+    text-align: center;
+}
+
+.email-list {
+    width: 100%;
+    display: flex;
+}
+
+.email-read {
+    background: #f2f5f5cc;
+    color: #202124;
+}
+
+.details {
+    flex: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.details>* {
+    flex: 5;
+}
+
+.details> :first-child {
+    flex: 1;
+}

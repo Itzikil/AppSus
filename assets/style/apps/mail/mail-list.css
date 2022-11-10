@@ -1,5 +1,11 @@
-.tr1 {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+.email-list>ul>li {
+    padding: 0.4rem 0;
+    margin: 0;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.email-preview-container {
+    display: flex;
+    margin: 2rem 0;
 }

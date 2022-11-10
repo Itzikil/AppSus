@@ -1,39 +1,36 @@
 export default {
     template: `
-    <section class="email-folder-list">
-      <router-link to="">
-          <div class1="btn compose-btn">
+    
+    <section class="email-folder-list flex flex-column">
+          <a @click="$emit('openModal')" class="btn compose-btn">
               Compose
-          </div>
-      </router-link>
-      <router-link to="">
-          <div class1="btn inbox-btn">
-              Inbox
-          </div>
-      </router-link>
-      <router-link to="">
-          <div class1="btn starred-btn">
-              Starred
-          </div>
-      </router-link>
-      <router-link to="">
-          <div class1="btn trash-btn">
-              Trash
-          </div>
-          <div class1="btn sent-btn">
-              Sent
-          </div>
-          <div class1="btn draft-btn">
-              Draft
-          </div>
-      </router-link>
+            </a>
+            <a class="flex justify-center text-align-c unread-emails">
+            Unread emails:{{showUnreadEmailsCount}}
+            </a>
+       <router-link v-for="(opt,i) in options" :key="i" :to="'/email/'+opt">
+            <div class="btn">
+                {{opt.replace(opt[0],opt[0].toUpperCase())}}
+            </div>
+       </router-link>
     </section>
   `,
     data() {
-        return {};
+        return {
+            options: ['inbox', 'sent', 'trash', 'draft'],
+          }
     },
     created() { },
-    methods: {},
-    computed: {},
+    methods: {
+        a() { },
+    },
+    computed: {
+        showUnreadEmailsCount() {
+            return this.emails?.reduce((acc, email) => {
+                if (!email.isRead) return acc + 1
+                else return acc
+            }, 0)
+        },
+    },
     unmounted() { },
 }

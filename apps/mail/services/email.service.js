@@ -2,47 +2,19 @@ import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
 const EMAIL_KEY = 'mailDB'
-
-const gEmails = [
-    {
-        id: utilService.makeId(),
-        subject: ' Miss You!',
-        body: 'Would love to catch up sometimes',
-        isRead: false,
-        sentAt: '14:46',
-        from: 'momo@momo.com',
-        to: 'user@appsus.com'
-    },
-    {
-        id: utilService.makeId(),
-        subject: 'kobe kobe',
-        body: 'Would love to hang up with you',
-        isRead: true,
-        sentAt: '14:46',
-        from: 'momo@momo.com',
-        to: 'baba@momo.com',
-    },
-    {
-        id: utilService.makeId(),
-        subject: 'yossi tossi!',
-        body: 'Never want to see you again!',
-        isRead: false,
-        sentAt: '14:46',
-        from: 'momo@momo.com',
-        to: 'dada1@momo.com',
-    },
-]
+const USER_KEY = 'userDB'
 
 
-const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
-}
+
 export const emailService = {
     query,
     remove,
     save,
-    get
+    get,
+    queryUser,
+}
+function queryUser(){
+    return storageService.query(USER_KEY)
 }
 function query() {
     return storageService.query(EMAIL_KEY)
@@ -57,14 +29,49 @@ function save(email) {
 function get(emailId) {
     return storageService.get(EMAIL_KEY, emailId)
 }
+_createUser()
 _createEmails()
 function _createEmails() {
     let emails = storageService.query(EMAIL_KEY)
     if (!emails || !emails.length) {
-        emails = gEmails
+        const email = {
+            id: utilService.makeId(),
+            subject: 'Miss you!',
+            body: 'Would love to catch up sometimes',
+            sentAt: '14:46',
+            to: 'momo@momo.com',
+            isStarred: false,
+            isRead: true,
+        }
+        const email2 = {
+            id: utilService.makeId(),
+            subject: 'Love you!',
+            body: 'Would love to hang up with you',
+            sentAt: '14:46',
+            to: 'baba@momo.com',
+            isStarred: true,
+            isRead: false,
+        }
+        const email3 = {
+            id: utilService.makeId(),
+            subject: 'Hate you!',
+            body: 'Never want to see you again!',
+            sentAt: '14:46',
+            to: 'dada1@momo.com',
+            isStarred: false,
+            isRead: false,
+        }
+        emails = [email, email2, email3]
         // console.log(emails)
         utilService.save(EMAIL_KEY, emails)
     }
     return emails
+}
+function _createUser() {
+    const loggedinUser = utilService.load(USER_KEY) || {
+        email: 'user@appsus.com',
+        fullname: 'Mahatma Appsus',
+    }
+    return loggedinUser
 }
 
