@@ -8,6 +8,9 @@ const gNotes = [
         isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
+        },
+        style:{
+            backgroundColor:  "#6495ed",
         }
     },
     {
@@ -19,7 +22,7 @@ const gNotes = [
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -32,6 +35,9 @@ const gNotes = [
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#6495ed"
         }
     },
     {
@@ -40,6 +46,9 @@ const gNotes = [
         isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
+        },
+        style: {
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -51,7 +60,7 @@ const gNotes = [
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -64,6 +73,9 @@ const gNotes = [
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -72,6 +84,9 @@ const gNotes = [
         isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
+        },
+        style: {
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -83,7 +98,7 @@ const gNotes = [
             title: "Bobi and Me"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#e7e7e7"
         }
     },
     {
@@ -96,6 +111,9 @@ const gNotes = [
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#e7e7e7"
         }
     }
 ]
