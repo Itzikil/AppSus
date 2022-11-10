@@ -1,5 +1,6 @@
 import noteTxt from './note-txt.cmp.js'
 import noteImg from './note-img.cmp.js'
+import noteVideo from './note-video.cmp.js'
 import noteTodos from './note-todos.cmp.js'
 import noteFeatures from './note-features.cmp.js'
 
@@ -18,6 +19,7 @@ export default {
         noteTxt,
         noteImg,
         noteTodos,
-        noteFeatures
+        noteFeatures,
+        noteVideo,
     }
 }
