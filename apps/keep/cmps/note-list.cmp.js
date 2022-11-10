@@ -4,10 +4,21 @@ export default {
     props:['notes'],
     template:`
         <section>
-            <ul class="note-ul clean-list pad">
-                <li v-for="note in notes" class="note pad radius">
-                    <note-preview :note="note"/>
-                </li>
+            <h2>Pinned</h2>
+            <ul class="note-ul pinned-note clean-list pad">
+                <template v-for="note in notes">
+                    <li v-if="note.isPinned" class="note pad radius">
+                        <note-preview  :note="note"/>
+                    </li>
+                </template>
+            </ul>
+            <h2>Unpinned</h2>
+            <ul class="note-ul unPinned-note clean-list pad">
+                <template v-for="note in notes">
+                    <li v-if="!note.isPinned" class="note pad radius">
+                        <note-preview  :note="note"/>
+                    </li>
+                </template>
             </ul>
         </section>
     `,

@@ -19,7 +19,9 @@ export default {
     created(){
         this.loadNotes()
         eventBus.on('remove', (noteId)=> {
+            console.log(noteId);
             const idx = this.notes.findIndex(note => note.id === noteId)
+            console.log(idx);
             this.notes.splice(idx,1)
         })
     },

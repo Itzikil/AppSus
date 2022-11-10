@@ -16,6 +16,7 @@ export default {
         data(){
             return{
                 txt: 'whats on your mind',
+                type: null ,
             }
         },
 

@@ -5,7 +5,7 @@ const gNotes = [
     {
         id: "n101",
         type: "note-txt",
-        isPinned: true,
+        isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
         }
@@ -13,6 +13,7 @@ const gNotes = [
     {
         id: "n102",
         type: "note-img",
+        isPinned: true,
         info: {
             url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
             title: "Bobi and Me"
@@ -24,6 +25,7 @@ const gNotes = [
     {
         id: "n103",
         type: "note-todos",
+        isPinned: false,
         info: {
             label: "Get my stuff together",
             todos: [
@@ -33,16 +35,17 @@ const gNotes = [
         }
     },
     {
-        id: "n101",
+        id: "n104",
         type: "note-txt",
-        isPinned: true,
+        isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
         }
     },
     {
-        id: "n102",
+        id: "n105",
         type: "note-img",
+        isPinned: false,
         info: {
             url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
             title: "Bobi and Me"
@@ -52,8 +55,9 @@ const gNotes = [
         }
     },
     {
-        id: "n103",
+        id: "n106",
         type: "note-todos",
+        isPinned: false,
         info: {
             label: "Get my stuff together",
             todos: [
@@ -63,16 +67,17 @@ const gNotes = [
         }
     },
     {
-        id: "n101",
+        id: "n107",
         type: "note-txt",
-        isPinned: true,
+        isPinned: false,
         info: {
             txt: "Fullstack Me Baby!"
         }
     },
     {
-        id: "n102",
+        id: "n108",
         type: "note-img",
+        isPinned: false,
         info: {
             url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
             title: "Bobi and Me"
@@ -82,8 +87,9 @@ const gNotes = [
         }
     },
     {
-        id: "n103",
+        id: "n109",
         type: "note-todos",
+        isPinned: false,
         info: {
             label: "Get my stuff together",
             todos: [
@@ -114,10 +120,10 @@ function get(noteId) {
 }
 
 function save(note){
-    if(note.id){   
+    if(!note.id){   
         return storageService.post(NOTE_KEY ,note , false)
     }else{
-        return storageService.post(NOTE_KEY ,note , false)
+        return storageService.put(NOTE_KEY ,note , false)
     }
 }
 
