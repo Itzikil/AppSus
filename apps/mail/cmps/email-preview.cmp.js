@@ -12,13 +12,16 @@ export default {
         <div @click="toggleStarred"  :class="[showStarred,'email-icon']">
           ★
         </div>
-        <div @click="$emit('selectedEmail',email)" class="details">
+        <div @click="$emit('selectedEmail',email)" :class="[email.isRead ? 'h-txt' : 'details']">
         
-            <span>
-                {{email.from}}
+            <span >
+                {{email.to}}
             </span>
             <span>
                 {{email.subject}}
+            </span>
+            <span>
+                {{email.body}}
             </span>
             <span>
                 {{ email.sentAt }}

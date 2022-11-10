@@ -1,11 +1,31 @@
 .email-list>ul>li {
     padding: 0.4rem 0;
     margin: 0;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid rgb(175, 174, 174);
+    
+}
+.email-list>ul>li:hover {
+    background-color: rgb(133, 133, 133);
+    border-top: 1px solid rgb(73, 72, 72);
+    
 }
 
 .email-preview-container {
     display: flex;
     margin: 2rem 0;
+}
+.h-txt{
+    flex: 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: rgb(168, 164, 164);
+}
+.h-txt>* {
+    flex: 5;
+    /* color: black; */
+}
+
+.h-txt> :first-child {
+    flex: 1;
 }
