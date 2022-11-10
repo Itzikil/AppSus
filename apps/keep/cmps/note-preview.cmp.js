@@ -4,8 +4,8 @@ import noteTodos from './note-todos.cmp.js'
 import noteFeatures from './note-features.cmp.js'
 
 export default {
-    props:['note'],
-    template:`
+    props: ['note'],
+    template: `
         <section>
             <p>{{note.type}}</p>
             <component :is="note.type"
@@ -14,10 +14,10 @@ export default {
             <note-features :note="note"/>
         </section>
         `,
-        components:{
-            noteTxt,
-            noteImg,
-            noteTodos,
-            noteFeatures
-        }
+    components: {
+        noteTxt,
+        noteImg,
+        noteTodos,
+        noteFeatures
+    }
 }
