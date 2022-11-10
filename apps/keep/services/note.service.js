@@ -9,8 +9,8 @@ const gNotes = [
         info: {
             txt: "Fullstack Me Baby!"
         },
-        style:{
-            backgroundColor:  "#6495ed",
+        style: {
+            backgroundColor: "#ca6d6d",
         }
     },
     {
@@ -18,8 +18,8 @@ const gNotes = [
         type: "note-img",
         isPinned: true,
         info: {
-            url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-            title: "Bobi and Me"
+            url: "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
+            txt: "Bobi and Me"
         },
         style: {
             backgroundColor: "#e7e7e7"
@@ -56,8 +56,8 @@ const gNotes = [
         type: "note-img",
         isPinned: false,
         info: {
-            url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-            title: "Bobi and Me"
+            url: "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg",
+            txt: "Bobi and Me"
         },
         style: {
             backgroundColor: "#e7e7e7"
@@ -95,7 +95,7 @@ const gNotes = [
         isPinned: false,
         info: {
             url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-            title: "Bobi and Me"
+            txt: "Bobi and Me"
         },
         style: {
             backgroundColor: "#e7e7e7"
@@ -115,7 +115,19 @@ const gNotes = [
         style: {
             backgroundColor: "#e7e7e7"
         }
-    }
+    },
+    {
+        id: "n110",
+        type: "note-video",
+        isPinned: true,
+        info: {
+            url: "https://www.youtube.com/watch?v=a6HgpNry3Pc",
+            txt: "Bobi and Me"
+        },
+        style: {
+            backgroundColor: "#e7e7e7"
+        }
+    },
 ]
 
 const NOTE_KEY = 'Snotes'
@@ -137,23 +149,23 @@ function get(noteId) {
     return storageService.get(NOTE_KEY, noteId)
 }
 
-function save(note){
-    if(!note.id){   
-        return storageService.post(NOTE_KEY ,note , false)
-    }else{
-        return storageService.put(NOTE_KEY ,note , false)
+function save(note) {
+    if (!note.id) {
+        return storageService.post(NOTE_KEY, note, false)
+    } else {
+        return storageService.put(NOTE_KEY, note, false)
     }
 }
 
-function remove(noteId){
-    return storageService.remove(NOTE_KEY ,noteId)
+function remove(noteId) {
+    return storageService.remove(NOTE_KEY, noteId)
 }
 
 function _createNotes() {
     var notes = utilService.load(NOTE_KEY)
-        if (!notes || !notes.length) {
-            notes = gNotes
-            utilService.save(NOTE_KEY, notes)
-        }
-        return notes
+    if (!notes || !notes.length) {
+        notes = gNotes
+        utilService.save(NOTE_KEY, notes)
+    }
+    return notes
 }

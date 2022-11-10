@@ -1,12 +1,13 @@
-.note-app{
+.note-app {
     flex-direction: column;
 }
-.note-input{
+
+.note-input {
     border: none;
     outline: 0;
 }
 
-.note-feature{
+.note-feature {
     gap: 10px;
     border: 1px solid gray;
     width: fit-content;
@@ -16,10 +17,8 @@
     box-shadow: 5px 5px 5px 5px rgb(207, 206, 206);
     margin-bottom: 20px;
 }
-color{
-    color: #ffffff;
-}
-.icon{
+
+.icon {
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
@@ -27,26 +26,29 @@ color{
     cursor: pointer;
 }
 
-.note{
+.note {
     position: relative;
     min-width: 190px;
     height: fit-content;
     /* background-color: #6495ed; */
     margin-bottom: 20px;
-     break-inside: avoid-column;
-     border: 0.5px solid rgb(202, 202, 202);
+    break-inside: avoid-column;
+    overflow: hidden;
+    border: 0.5px solid rgb(202, 202, 202);
 }
 
-.note-ul{
+.note-ul {
     column-count: 5;
     column-gap: 2%;
     column-width: 30%;
 }
-.trans{
+
+.trans {
     background: transparent;
     border: 0;
 }
-.remove-note{
+
+.remove-note {
     position: absolute;
     cursor: pointer;
     font-weight: bold;
@@ -54,7 +56,7 @@ color{
     top: 0;
 }
 
-.change-color{
+.change-color {
     color: var(--clr5);
 }
 
@@ -62,31 +64,31 @@ color{
     display: flex;
 }
 
-.note-features > *{
+.note-features>* {
     margin: 0;
     flex-basis: 20%;
 }
 
 @media(max-width: 1050px) {
-    .note-ul{
+    .note-ul {
         column-count: 4;
     }
 }
 
 @media(max-width: 800px) {
-    .note-ul{
+    .note-ul {
         column-count: 3;
     }
 }
 
 @media(max-width: 630px) {
-    .note-ul{
+    .note-ul {
         column-count: 2;
     }
 }
 
 @media(max-width: 430px) {
-    .note-ul{
+    .note-ul {
         column-count: 1;
     }
 }

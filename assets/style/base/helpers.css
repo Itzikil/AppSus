@@ -113,4 +113,11 @@
     border-radius: 40px;
     border: 1px solid gray;
     padding: 10px;
+<<<<<<< HEAD
+}
+
+.point{
+    cursor: pointer;
+=======
+>>>>>>> e89e5e164975a92bdaa63cc7eeb8df46b6c07907
 }
