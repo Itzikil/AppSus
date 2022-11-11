@@ -33,10 +33,6 @@ export default {
             })
         },
         // how to fire to grandpa???
-        // remove(noteId){
-        //     const idx = this.notes.findIndex(note => note.id === noteId)
-        //     this.notes.splice(idx,1)
-        // }
         add(note){
             this.notes.push(note)
             this.loadNotes()

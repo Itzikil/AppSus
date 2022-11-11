@@ -9,8 +9,8 @@ export default {
             <label class="trans icon  change-color"> <i class="fa fa-paint-brush icon" aria-hidden="true"></i>
                 <input v-model="color" @change="changeColor(note)" type="color" hidden/>
             </label>
-            <button class="trans icon "><i class="fa fa-envelope icon" aria-hidden="true"></i></button>
-            <button @click="editNote(note)" class="trans icon "><i class="fa fa-pencil-square-o icon" aria-hidden="true"></i></button>
+            <button class="trans icon maintence"><i class="fa fa-envelope icon maintence" aria-hidden="true" ></i></button>
+            <button @click="editNote(note)" class="trans icon maintence"><i class="fa fa-pencil-square-o icon maintence" aria-hidden="true"></i></button>
             <button @click="removeNote(note.id)" class="trans icon "><i class="fa fa-trash icon" aria-hidden="true"></i></button>
         </section>
         `,

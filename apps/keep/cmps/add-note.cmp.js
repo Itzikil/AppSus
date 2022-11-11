@@ -9,7 +9,7 @@ export default {
                 <i @click="addTxt" class="fa fa-comment-o" aria-hidden="true" class="point"></i>
                 <i @click="addImg" class="fa fa-picture-o" aria-hidden="true" class="point"></i>
                 <i @click="addVideo" class="fa fa-youtube-play" aria-hidden="true" class="point"></i>
-                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                <i class="fa fa-list-ul " aria-hidden="true"></i>
                 <button class="trans">Add</button>
             </form>
         </section>
