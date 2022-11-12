@@ -24,9 +24,9 @@ export default {
           <i @click.stop="toggleRead" :class="[showRead,'email-icon']"></i>
           <i @click.stop="removeEmail" class="fa fa-trash email-icon"></i>
           <i class="fa fa-reply email-icon" aria-hidden="true" @click.stop="$emit('reply',email)"></i>
-          <!-- <router-link :to="sendToNote" class="fa fa-sticky-note email-icon" aria-hidden="true"></router-link>  -->
-          </div>
-   </section>
+        </div>
+    </section>
+    <router-link :to.stop="sendToNote" class="fa fa-sticky-note email-icon" aria-hidden="true"></router-link> 
   `,
     data() {
         return {};
@@ -68,17 +68,18 @@ export default {
         showStarred() {
             return this.email.isStarred ? 'email-star-yellow' : 'email-star-grey';
         },
-        
-        // sendToNote() {
-        //     return (
-        //         `/note/` +
 
-        //         new URLSearchParams({
-        //             type: this.email.subject,
-        //             txt: this.email.body,
-        //         }).toString()
-        //     );
-        // },
+        sendToNote() {
+            return (
+                `/note/` +
+                '?' +
+                new URLSearchParams({
+                    type: 'note-txt',
+                    txt: this.email.body,
+                    backgroundColor: "#e7e7e7",
+                }).toString()
+            )
+        }
     },
     unmounted() { },
     props: ['email', 'selectedEmail'],

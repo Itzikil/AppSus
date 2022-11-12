@@ -187,11 +187,11 @@ export default {
             handler() {
                 const {
                     params: { status, emailId },
-                    query: { title, txt },
+                    query: { type, txt },
                 } = this.$route;
-                if (title || txt) {
+                if (type || txt) {
                     this.showModal = true;
-                    this.noteDetails = { title, txt };
+                    this.noteDetails = { type, txt };
                 }
                 this.routeEmailId = emailId;
                 return (this.filterBy.status = status);

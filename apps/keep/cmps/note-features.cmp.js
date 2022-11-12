@@ -14,28 +14,36 @@ export default {
             <button @click="removeNote(note.id)" class="trans icon "><i class="fa fa-trash icon" aria-hidden="true"></i></button>
         </section>
         `,
-        data(){
-            return{
-                color: null,
-            }
+    data() {
+        return {
+            color: null,
+        }
+    },
+    methods: {
+        removeNote(noteId) {
+            noteService.remove(noteId)
+                .then(() =>
+                    eventBus.emit('remove', noteId))
         },
-           methods:{
-            removeNote(noteId){
-                noteService.remove(noteId)
-                    .then(() => 
-                    eventBus.emit('remove',noteId))
-            },
-            pinNote(note){
-                note.isPinned = !note.isPinned
-                    noteService.save(note)
-            },
-            changeColor(note){
-                note.style.backgroundColor = this.color
-                    noteService.save(note)
-            },
-            editNote(note){
-                this.$refs.input.focus()
-                console.log(note)
-            },
+        pinNote(note) {
+            note.isPinned = !note.isPinned
+            noteService.save(note)
         },
+        changeColor(note) {
+            note.style.backgroundColor = this.color
+            noteService.save(note)
+        },
+        editNote(note) {
+            this.$refs.input.focus()
+            console.log(note)
+        },
+    },
+    computed: {
+        noteDetail() {
+            const type = this.note.type
+            const txt = 'hello'
+            const backgroundColor = this.note.backgroundColor
+            return '?' + new URLSearchParams({ type, txt, backgroundColor }).toString()
+        }
+    },
 }

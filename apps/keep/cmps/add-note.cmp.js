@@ -1,5 +1,6 @@
-import {noteService} from "../services/note.service.js"
-
+import { noteService } from "../services/note.service.js"
+import { utilService } from "../../../services/util.service.js";
+import { eventBus } from "../../../services/event-bus.service.js";
 export default {
     template: `
         <section class="note-app flex">
@@ -14,40 +15,58 @@ export default {
             </form>
         </section>
         `,
-        data(){
-            return{
-                info:{txt: 'whats on your mind',url:null,},
-                type: 'note-txt' ,
-            }
-        },created(){
-            console.log(this.type);
-        },
-
-        methods:{
-            addNote(){
-                var note = {
-                    info:{txt : this.info.txt , url: this.info.url},
-                    type: this.type,
-                    style: {backgroundColor :  "#e7e7e7",},
-                }
-                console.log(note);
-                noteService.save(note)
-                    .then(note => {
-                        this.$emit('add', note)
-                        this.info.txt = ''
-                    })
-            },
-            addTxt(){
-                this.info.txt = 'whats on your mind'
-                this.type='note-txt'
-            },
-            addImg(){
-                this.info.txt = 'enter title'
-                this.type='note-img'
-            },
-            addVideo(){
-                this.info.txt = 'enter URL'
-                this.type='note-video'
-            }
+    data() {
+        return {
+            info: { txt: 'whats on your mind', url: null, },
+            type: 'note-txt',
         }
+    }, created() {
+        console.log(this.type);
+    },
+
+    methods: {
+        addNote() {
+            var note = {
+                info: { txt: this.info.txt, url: this.info.url },
+                type: this.type,
+                style: { backgroundColor: "#e7e7e7", },
+            }
+            console.log(note);
+            noteService.save(note)
+                .then(note => {
+                    this.$emit('add', note)
+                    this.info.txt = ''
+                })
+        },
+        addTxt() {
+            this.info.txt = 'whats on your mind'
+            this.type = 'note-txt'
+        },
+        addImg() {
+            this.info.txt = 'enter title'
+            this.type = 'note-img'
+        },
+        addVideo() {
+            this.info.txt = 'enter URL'
+            this.type = 'note-video'
+        }
+    },
+    created() {
+        const queryParams = this.$route.query
+        console.log(queryParams);
+        if (!queryParams) return
+        const newNote = {
+            id: utilService.makeId(),
+            type: queryParams.type,
+            isPinned: false,
+            info: {
+                txt: queryParams.txt,
+            },
+            style:{
+                backgroundColor:queryParams.backgroundColor
+            }
+            
+        }
+        eventBus.emit('save-new-note', newNote)
+    },
 }

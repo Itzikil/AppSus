@@ -1,6 +1,6 @@
 import { emailService } from "../services/email.service.js"
 export default {
-    props:['email'],
+    props:['user', 'email', 'note'],
     template: `
     <section class="email-compose">
     <h4>Write your email
@@ -30,12 +30,12 @@ export default {
         return {
             sendEmail: {
                 to: this.email?.to || '',
-                subject: this.email?.subject || this.note?.title || '',
+                subject: this.email?.subject || this.note?.type || '',
                 body: this.note?.txt || '',
                 isRead: false,
                 isStarred: false,
                 status: 'sent',
-                from: null,
+                from: this.user?.email,
             },
             interval: null,
         }

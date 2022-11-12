@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     removeEmail() {
-      // TODO: use event bus to emit the event to email-app
+      
     },
   },
   computed: {

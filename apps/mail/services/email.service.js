@@ -195,11 +195,11 @@ function _createEmails() {
             status: 'inbox',
             isTrash: true,
             subject: 'Work on design',
-            to: 'Itzhak@Shahar.thebeks',
+            to: 'kobekobe@.thebeks',
         }
         const email12 = {
             body: 'Would you tell us how to make a canvas display on a note?',
-            from: 'Itzhak@Shahar.thebeks',
+            from: 'kobekobe@.thebeks',
             id: utilService.makeId(),
             isRead: false,
             isStarred: true,
@@ -210,7 +210,7 @@ function _createEmails() {
         }
         const email11 = {
             body: 'Would you tell us how to make a canvas display on a note?',
-            from: 'Itzhak@Shahar.thebeks',
+            from: 'kobekobe@.thebeks',
             id: utilService.makeId(),
             isRead: false,
             isStarred: true,
@@ -221,7 +221,7 @@ function _createEmails() {
         }
         const email17 = {
             body: 'Would you tell us how to make a canvas display on a note?',
-            from: 'Itzhak@Shahar.thebeks',
+            from: 'kobekobe@.thebeks',
             id: utilService.makeId(),
             isRead: false,
             isStarred: true,
@@ -232,7 +232,7 @@ function _createEmails() {
         }
         const email18 = {
             body: 'Would you tell us how to make a canvas display on a note?',
-            from: 'Itzhak@Shahar.thebeks',
+            from: 'kobekobe@.thebeks',
             id: utilService.makeId(),
             isRead: false,
             isStarred: true,
