@@ -2,22 +2,136 @@
     position: fixed;
     background: #fff;
     color: grey;
-    top: 120px;
+    top: 90px;
     left: 0;
     height: 100vh;
-    width: 20vw;
+    width: calc(10vw);
     box-shadow: 0px 8px 10px 1px rgb(0 0 0 / 14%),
-    0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
+        0px 3px 14px 2px rgb(0 0 0 / 12%), 0px 5px 5px -3px rgb(0 0 0 / 20%);
+    
+    
+}
+.email-folder-list:hover {
+   min-width: 100px;
+   
 }
 
-.email-folder-list>a,
-.email-folder-list>a>.btn {
+
+.email-folder-list>a {
+    padding: 1rem;
     margin-bottom: 0.8rem;
     color: grey;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
 }
 
 .unread-emails {
     padding: 1rem;
-    margin-bottom: 0.8rem;
+}
+
+.unread-emails> :first-child {
+    margin-inline-end: 0.7rem;
+}
+
+.email-folder-list>a.email-active {
+    color: #0b099e;
+}
+
+.email-status-btn> :first-child {
+    margin-inline-end: 0.7rem;
+}
+
+.email-folder-list .btn.email-status-btn.email-active {
+    color: rgb(40, 19, 175);
+}
+
+.email-folder-list .btn.email-status-btn.email-active,
+.btn.email-status-btn:hover {
+    background-color: #fce8e6;
+    border-radius: 5px;
+}
+
+/* Compose btn */
+.fa-plus-square:before{
+    margin-right: calc(5vw);
+}
+.fa-plus-square:hover {
+    content: "\f0fe";
+    justify-self: center;
+}
+.btn.compose-btn {
+    cursor: pointer;
+    
+    padding: 0;
+    margin-top: 0.8rem;
+    height: 56px;
+    
+    border-radius: 15px;
+    color: #3c4043;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+        1px 3px 1px rgba(60, 64, 67, 0.302);
+}
+
+.btn.compose-btn {
+    transition: all 0.4s;
+    /* margin-left: 1px; */
+    font-family: Verdana, serif;
+    font-size: 14px;
+    
+    /* display: none; */
+}
+
+.btn.compose-btn::before {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 2rem;
+    content: '';
+    display: block;
+    min-width: 2rem;
+}
+
+
+
+
+
+
+
+.email-folder-list>a {
+    justify-content: center;
+}
+
+.email-folder-list>a>i.fa-solid,
+.btn.compose-btn> :first-child {
+    margin: 0;
+}
+
+.email-folder-list>a>small,
+.email-folder-list>a>span {
+    display: none;
+}
+
+
+
+.email-nav-open.email-folder-list .unread-emails> :first-child,
+.email-nav-open.email-folder-list .email-status-btn> :first-child{
+    margin-inline-end: 0.7rem;
+}
+
+.email-nav-open.email-folder-list .btn.compose-btn::before {
+    position: relative;
+    left: 5px;
+}
+
+.email-nav-open.email-folder-list>a {
+    justify-content: flex-start;
+}
+
+.email-nav-open.email-folder-list>a>small,
+.email-nav-open.email-folder-list>a>span {
+    display: inline;
 }

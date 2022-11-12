@@ -1,18 +1,49 @@
 .email-content {
-    background-color: #eee;
+    
     display: flex;
     flex: 1;
 }
 
 .email-content>p {
     justify-content: center;
-    background-color: #fff;
     flex: 1;
-    outline: solid 1rem #eee;
+    overflow-wrap: anywhere;
 }
 
 .email-details {
     max-width: 50%;
     height: 100%;
     margin-top: 1rem;
+}
+
+.email-user {
+    margin-bottom: 1rem;
+}
+
+.email-user-container {
+    position: relative;
+}
+
+.email-user-container>a {
+    position: absolute;
+    left: -50px;
+    font-size: 1.5rem;
+    color: #1ae82b;
+    flex-direction: row;
+}
+
+.email-user-container>a:hover {
+    opacity: 0.7;
+}
+
+.email-user-container>i {
+    font-size: 2rem;
+    color: #eee;
+    background-color: #1e1bce;
+    border-radius: 50%;
+    margin-inline-end: 1rem;
+}
+
+.email-user-container>h3 {
+    margin-inline-end: 2rem;
 }

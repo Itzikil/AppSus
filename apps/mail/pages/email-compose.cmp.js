@@ -1,4 +1,6 @@
+import { emailService } from "../services/email.service.js"
 export default {
+    props:['email'],
     template: `
     <section class="email-compose">
     <h4>Write your email
@@ -27,23 +29,33 @@ export default {
     data() {
         return {
             sendEmail: {
-                to: '',
-                subject: '',
-                body: '',
+                to: this.email?.to || '',
+                subject: this.email?.subject || this.note?.title || '',
+                body: this.note?.txt || '',
                 isRead: false,
                 isStarred: false,
+                status: 'sent',
+                from: null,
             },
-        };
+            interval: null,
+        }
     },
-    created() { },
+    created() {
+        emailService.queryUser().then(({ email }) => {
+            this.sendEmail.from = email
+            const { to } = this.sendEmail
+            this.sendEmail.to = to === email ? this.email?.from : to
+        })
+    },
     methods: {
         composeEmail() {
-            const newEmail = JSON.parse(JSON.stringify(this.sendEmail));
-            this.sendEmail.to = '';
-            this.sendEmail.body = '';
-            this.sendEmail.subject = '';
-            newEmail.sentAt = '14:46';
-            this.$emit('composedEmail', newEmail);
+            const newEmail = JSON.parse(JSON.stringify(this.sendEmail))
+            newEmail.sentAt = emailService.showTime(new Date)
+            newEmail.status = 'sent'
+            this.$emit('composedEmail', newEmail)
+            this.sendEmail.to = ''
+            this.sendEmail.body = ''
+            this.sendEmail.subject = ''
         },
     },
     computed: {},

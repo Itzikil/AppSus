@@ -1,3 +1,4 @@
+import appFooter from "../cmps/app-footer.cmp.js"
 export default {
     template: `
         <section class="home-page">
@@ -6,6 +7,10 @@ export default {
                 <img src="img/1.jpg" alt="" />
                 <img src="img/3.jpg" alt="" />
             </div>
+            <app-footer />
         </section>
     `,
+components: {
+    appFooter,
+},
 }
